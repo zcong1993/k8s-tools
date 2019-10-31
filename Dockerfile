@@ -1,5 +1,6 @@
-FROM alpine:3.10
+FROM debian:stretch
 
-RUN apk add --no-cache curl busybox-extras ca-certificates
+RUN apt-get update  \
+    && apt-get install -y curl telnet
 
 CMD [ "sleep", "999999999" ]
